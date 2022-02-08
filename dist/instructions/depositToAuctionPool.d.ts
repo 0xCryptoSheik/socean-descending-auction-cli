@@ -1,0 +1,10 @@
+import { Program } from "@project-serum/anchor";
+import { TransactionInstruction } from "@solana/web3.js";
+import { DescendingAuctionProgram } from "../idl/idl";
+import { InstructionAccounts } from "../typeUtils";
+import BN from "bn.js";
+export declare type DepositToAuctionPoolInstructionAccounts = Omit<InstructionAccounts<DescendingAuctionProgram, "depositToAuctionPool">, "tokenProgram">;
+export declare type DepositToAuctionPoolInstructionArgs = {
+    depositAmount: BN;
+};
+export declare function depositToAuctionPoolInstruction(program: Program<DescendingAuctionProgram>, accounts: DepositToAuctionPoolInstructionAccounts, args: DepositToAuctionPoolInstructionArgs): TransactionInstruction;
